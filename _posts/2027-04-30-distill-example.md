@@ -17,7 +17,7 @@ mermaid:
 # Anonymize when submitting
 # authors:
 #   - name: Anonymous
-
+<!---
 authors:
   - name: Albert Einstein
     url: "https://en.wikipedia.org/wiki/Albert_Einstein"
@@ -30,7 +30,7 @@ authors:
   - name: Nathan Rosen
     url: "https://en.wikipedia.org/wiki/Nathan_Rosen"
     affiliations:
-      name: IAS, Princeton
+      name: IAS, Princeton -->
 
 # must be the exact same name as your blogpost
 bibliography: 2027-04-30-distill-example.bib
