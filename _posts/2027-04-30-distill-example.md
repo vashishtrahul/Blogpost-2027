@@ -15,8 +15,8 @@ mermaid:
   zoomable: true
 
 # Anonymize when submitting
-# authors:
-#   - name: Anonymous
+authors:
+  - name: Anonymous
 <!---
 authors:
   - name: Albert Einstein
