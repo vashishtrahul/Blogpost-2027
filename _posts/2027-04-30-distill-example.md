@@ -30,8 +30,8 @@ authors:
   - name: Nathan Rosen
     url: "https://en.wikipedia.org/wiki/Nathan_Rosen"
     affiliations:
-      name: IAS, Princeton -->
-
+      name: IAS, Princeton 
+-->
 # must be the exact same name as your blogpost
 bibliography: 2027-04-30-distill-example.bib
 
