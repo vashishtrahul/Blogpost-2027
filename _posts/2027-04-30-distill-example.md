@@ -14,25 +14,27 @@ mermaid:
   enabled: true
   zoomable: true
 
-# Anonymize when submitting
+# anonymize when submitting
 authors:
   - name: Anonymous
-<!--
-authors:
-  - name: Albert Einstein
-    url: "https://en.wikipedia.org/wiki/Albert_Einstein"
-    affiliations:
-      name: IAS, Princeton
-  - name: Boris Podolsky
-    url: "https://en.wikipedia.org/wiki/Boris_Podolsky"
-    affiliations:
-      name: IAS, Princeton
-  - name: Nathan Rosen
-    url: "https://en.wikipedia.org/wiki/Nathan_Rosen"
-    affiliations:
-      name: IAS, Princeton 
--->
+
+# do not fill this in until your post is accepted and you're publishing your camera-ready post!
+# authors:
+#   - name: Albert Einstein
+#     url: "https://en.wikipedia.org/wiki/Albert_Einstein"
+#     affiliations:
+#       name: IAS, Princeton
+#   - name: Boris Podolsky
+#     url: "https://en.wikipedia.org/wiki/Boris_Podolsky"
+#     affiliations:
+#       name: IAS, Princeton
+#   - name: Nathan Rosen
+#     url: "https://en.wikipedia.org/wiki/Nathan_Rosen"
+#     affiliations:
+#       name: IAS, Princeton
 # must be the exact same name as your blogpost
+
+
 bibliography: 2027-04-30-distill-example.bib
 
 # Add a table of contents to your post.
