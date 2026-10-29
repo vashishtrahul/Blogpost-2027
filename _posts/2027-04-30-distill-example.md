@@ -17,7 +17,7 @@ mermaid:
 # Anonymize when submitting
 authors:
   - name: Anonymous
-<!---
+<!--
 authors:
   - name: Albert Einstein
     url: "https://en.wikipedia.org/wiki/Albert_Einstein"
