@@ -78,6 +78,23 @@ Note: please use the table of contents as defined in the front matter rather tha
 
 ## Equations
 
+
+1. What is interpretability?
+2. Why do we need it? Examples
+3. Why minimal sufficient set?
+4. What questions we are addressing here?
+5. About Fong and Veldadi paper
+6. About SIS
+7. About Anchors
+
+Recent advances in LLMs and nonparametric methods in machine has led to deployment in various domains such as, natural language understanding[], vision [], speech[] and multimodal applications[]. With such great advances in the field deep learning models are still considered opaque. Many such domains and applications which benefits from better models are often require a model to be transparent. For example: weather prediction model, rejecting loan application, bail denial model or real-time systems in space and finance. It is important that decisions in such applications can be interpretably rationalized. 
+
+
+Define Interpretability 
+{% include figure.liquid path="assets/img/2027-04-30-distill-example/Interpretability.jpg" class="img-fluid" %}
+
+Example for Interpretability
+
 This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine.
 You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`.
 If you leave it inside a paragraph, it will produce an inline expression, just like $$ E = mc^2 $$.
@@ -105,7 +122,7 @@ To include images in your submission in this way, you must do something like the
 
 which results in the following image:
 
-{% include figure.liquid path="assets/img/2027-04-30-distill-example/iclr.png" class="img-fluid" %}
+{% include figure.liquid path="assets/img/2027-04-30-distill-example/Interpretability.jpg" class="img-fluid" %}
 
 To ensure that there are no namespace conflicts, you must save your asset to your unique directory
 `/assets/img/2027-04-30-[SUBMISSION NAME]` within your submission.
