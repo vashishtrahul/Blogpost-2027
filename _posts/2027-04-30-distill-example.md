@@ -1,9 +1,7 @@
 ---
 layout: distill
-title: Sample Blog Post
-description: Your blog post's abstract.
-  Please add your abstract or summary here and not in the main body of your text.
-  Do not include math/latex or hyperlinks.
+title: Sufficient Explanations in Neural Networks
+description: TBD
 date: 2027-04-30
 future: true
 htmlwidgets: true
