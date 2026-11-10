@@ -74,28 +74,69 @@ _styles: >
 ---
 
 
+## Introduction
 
-Recent advances in deep learning have led to deployment of ML models in various domains such as natural language understanding <d-cite key="gregor2015draw"></d-cite>, vision tasks [], speech detection [] and multimodal applications []. With such great advances in the field deep learning models are still considered opaque. Add a line for why deep models are opaque
+Recent advances in deep learning have led to deployment of ML models in various domains such as natural language understanding <d-cite key="gregor2015draw"></d-cite>, vision tasks [], speech detection [] and multimodal applications []. With such great advances in the field deep learning models are still considered opaque. Add a line for why deep models are opaque. 
+The ability to understand and explain how a machine learning or deep learning model makes decisions can be defined as interpretability. 
 
- Many such domains and applications which benefits from better models are often require a model to be transparent. For example: weather prediction model, rejecting loan application, bail denial model or real-time systems in space and finance. It is important that decisions in such applications can be interpretably rationalized. We focus on model interpretability in this blog.  
-Define Interpretability 
+ Many such domains and applications which benefits from better models are often require a model to be transparent. For example: weather prediction model, rejecting loan application, bail denial model or real-time systems in space and finance. It is important that decisions in such applications can be interpretably rationalized. We focus on model interpretability in this blog. The figure above illustrates some of the key questions that interpretability seeks to answer. Consider a weather prediction model used to determine whether environmental conditions are suitable for launching a vehicle. Based on various environmental factors, the model predicts whether the weather is favourable for launch. Suppose that the presence of smog causes the model to classify the weather as overcast, ultimately resulting in a decision to deny the launch.
+
+ Consider domains such as weather forecasting, loan approval, judicial decision-making (e.g., bail decisions), and real-time systems in aerospace and finance. In these applications, it is important not only to obtain accurate predictions but also to understand the reasoning behind them. A model's decisions should be interpretable and, where necessary, rationalized in terms of the underlying evidence.
+
+To illustrate why this matters, consider a weather prediction model used to determine whether environmental conditions are suitable for launching a vehicle. Based on various environmental factors, the model predicts whether the weather is favourable for launch. Suppose that the presence of smog causes the model to classify the weather as overcast, ultimately resulting in a decision to deny the launch.
+
 {% include figure.liquid path="assets/img/2027-04-30-distill-example/Interpretability.jpg" class="img-fluid" %}
+
+However, how can we determine whether this decision is based on the right features? Is the model genuinely relying on relevant environmental factors, or is it being influenced by misleading or irrelevant features? Without an interpretability mechanism, we have no reliable way to examine the reasoning behind the model's predictions or verify whether it is focusing on the appropriate features. In safety-critical applications such as launch vehicle operations, where an incorrect decision can have serious consequences, understanding and validating the model's decision-making process is therefore essential. This is precisely where model interpretability becomes important.
+
+{% include figure.liquid path="assets/img/2027-04-30-distill-example/Rocket Launchpad Through Hazy Skies.jpg" class="img-fluid" %}
+
+Model interpretability can be approached in several ways, depending on how explanations are generated, the scope of the explanation, and the extent to which the underlying model is considered. The figure below presents a taxonomy of model interpretability methods.
+
+{% include figure.liquid path="assets/img/2027-04-30-distill-example/Taxonomy.png" class="img-fluid" %}
+
+In this blog, we focus on two broad directions: post-hoc, model-agnostic explanation methods and self-explainable models. We will examine how these approaches provide local and global explanations, and discuss their strengths and limitations.
+
+### From feature importance to minimal sufficient explanations
+
+An important question that arises when interpreting a model's prediction is: Which input features are actually responsible for the prediction?
+
+Several recent works [], [], [] approach this question by identifying the smallest subset of input features sufficient to preserve a model's prediction. These explanations are commonly referres. A minimal sufficient reason id to as minimal sufficient reasons the smallest subset of input features, retained at their original values, that is sufficient to ensure that the model's prediction remains unchanged under a specified treatment of the remaining features.
+
+Why is minimality important? A large set of features may contain both relevant and redundant information, making it difficult to distinguish the evidence that genuinely supports a prediction from features that contribute little to it. By identifying a minimal sufficient subset, we can obtain a more concise explanation of the model's decision and reduce the ambiguity associated with feature importance.
+
+Interestingly, the question of identifying important features can be approached from different perspectives. For instance, one line of work asks:
+
+<b>1. What should we remove?</b> Which input features can be omitted such that the model's prediction changes or its confidence in the prediction drops significantly?
+
+<b>2. What should we retain?</b> Which subset of input features must be preserved so that the model's original prediction remains unchanged?
+
+<b>3. What is the minimum we need?</b> Can we identify the smallest possible subset of input features that is sufficient to preserve the model's prediction?
+
+Although these questions are closely related, they lead to different explanation strategies and introduce different challenges.
+
+In this blog, we explore recent approaches that address these questions, with a particular emphasis on minimal sufficient explanations. We will examine their underlying ideas, compare their approaches, and discuss how they help us move beyond simply identifying important features towards understanding the minimum features required to justify a model's prediction.
+
+## Post-hoc Methods 
+  ### Fong paper
+  ### SIS
+  ### Anchors
+
+
+
 
 
 ## Equations
 1. What is interpretability?
 2. Why do we need it? Examples
-3. Why minimal sufficient set?
-4. What questions we are addressing here?
-5. About Fong and Veldadi paper
-6. About SIS
-7. About Anchors
+3. Taxonomy
+4. Why minimal sufficient set?
+5. What questions we are addressing here?
+6. About Fong and Veldadi paper
+7. About SIS
+8. About Anchors
 
 
-
-
-
-Example for Interpretability
 
 This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine.
 You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`.
