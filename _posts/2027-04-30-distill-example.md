@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: Sufficient Explanations in Neural Networks
+title: Distill example
 description: TBD
 date: 2027-04-30
 future: true
