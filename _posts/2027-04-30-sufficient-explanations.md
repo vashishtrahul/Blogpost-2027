@@ -76,8 +76,12 @@ _styles: >
 
 ## Introduction
 
-Recent advances in deep learning have led to deployment of ML models in various domains such as natural language understanding <d-cite key="gregor2015draw"></d-cite>, vision tasks [], speech detection [] and multimodal applications []. With such great advances in the field deep learning models are still considered opaque. Add a line for why deep models are opaque. 
-The ability to understand and explain how a machine learning or deep learning model makes decisions can be defined as interpretability. 
+Recent advances in deep learning and large language models have led to the deployment of deep learning models across various domains, including natural language processing <d-cite key="gregor2015draw"></d-cite>, computer vision [], speech processing [], and multimodal learning []. Despite significant performance improvements [] across tasks, deep learning models remain opaque due to complex hierarchical representations. This lack of understanding arises because a single neuron does not represent a single concept, and information is often distributed across multiple layers and neurons. Thus, understanding the contribution of a single neuron is insufficient to understand the model's decision. Recent work has approached model interpretability through feature and concept based explanations. In this blog, we discuss two such approaches SIS and SENN
+
+
+
+
+<!-- The ability to understand and explain how a machine learning or deep learning model makes decisions can be defined as interpretability.  -->
 
  Many such domains and applications which benefits from better models are often require a model to be transparent. For example: weather prediction model, rejecting loan application, bail denial model or real-time systems in space and finance. It is important that decisions in such applications can be interpretably rationalized. We focus on model interpretability in this blog. The figure above illustrates some of the key questions that interpretability seeks to answer. Consider a weather prediction model used to determine whether environmental conditions are suitable for launching a vehicle. Based on various environmental factors, the model predicts whether the weather is favourable for launch. Suppose that the presence of smog causes the model to classify the weather as overcast, ultimately resulting in a decision to deny the launch.
 
