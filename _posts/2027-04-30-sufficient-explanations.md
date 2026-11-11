@@ -134,9 +134,21 @@ These challenges highlight a broader consideration: explanations based on removi
 In other words, instead of asking what the model can do without, we ask what it needs to make its prediction.
 
 ### SIS
+
+
+
+
 ### Anchors
   
 
+## Why Self-Explainatory methods are important?
+
+## Self-Explainable Models
+### SST
+### Paper 2
+
+## NAMs
+## Limitations and Future Directions
 
 
 
