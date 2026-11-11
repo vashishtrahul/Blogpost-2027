@@ -93,7 +93,7 @@ However, how can we determine whether this decision is based on the right featur
 
 Model interpretability can be approached in several ways, depending on how explanations are generated, the scope of the explanation, and the extent to which the underlying model is considered. The figure below presents a taxonomy of model interpretability methods.
 
-{% include figure.liquid path="assets/img/2027-04-30-distill-example/Taxonomy.png" class="img-fluid" %}
+{% include figure.liquid path="assets/img/2027-04-30-distill-example/Taxonomy_updated.jpg" class="img-fluid" %}
 
 In this blog, we focus on two broad directions: post-hoc, model-agnostic explanation methods and self-explainable models. We will examine how these approaches provide local and global explanations, and discuss their strengths and limitations.
 
