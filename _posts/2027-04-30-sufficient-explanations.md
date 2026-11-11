@@ -107,7 +107,7 @@ Why is minimality important? A large set of features may contain both relevant a
 
 Interestingly, the question of identifying important features can be approached from different perspectives. For instance, one line of work asks:
 
-<b>1. What should we remove?</b> Which input features can be omitted such that the model's prediction changes or its confidence in the prediction drops significantly?
+<b>1. What should we remove?</b> Which input features can be omitted such that the model's prediction changes or its confidence in the prediction changes significantly?
 
 <b>2. What should we retain?</b> Which subset of input features must be preserved so that the model's original prediction remains unchanged?
 
@@ -115,12 +115,29 @@ Interestingly, the question of identifying important features can be approached 
 
 Although these questions are closely related, they lead to different explanation strategies and introduce different challenges.
 
-In this blog, we explore recent approaches that address these questions, with a particular emphasis on minimal sufficient explanations. We will examine their underlying ideas, compare their approaches, and discuss how they help us move beyond simply identifying important features towards understanding the minimum features required to justify a model's prediction.
+In this blog, we explore recent approaches that address these questions, with a particular emphasis on minimal sufficient explanations. We will examine their underlying ideas, compare their approaches, and discuss how they help us move beyond simply identifying important features towards understanding the minimum features required to justify a model's prediction. We will also discuss the limitations these methods have and ideas for further work.
+## Post-hoc Methods for Minimal Sufficiency
 
-## Post-hoc Methods 
-  ### Fong paper
-  ### SIS
-  ### Anchors
+
+### What features should we omit to significantly affect a model's prediction?
+
+We often try to understand a model by identifying the features it considers important. But there is another way to approach this: instead of identifying what matters, we can examine what happens when certain features are removed.
+
+Consider an image classifier that predicts whether an image contains a dog. We can start by masking a small region of the image and passing the modified image to the classifier. If its confidence in the *dog* prediction drops significantly, the removed region likely contained information important to the prediction.
+
+This idea forms the basis of the approach proposed by Fong and Vedaldi in their paper <d-cite key="fong2017interpretable"></d-cite>. They formulate an optimization problem to identify image regions whose perturbation causes the target-class score to decrease. The selected regions can be replaced with different alternatives, such as blurred content, Gaussian noise, or constant values.
+
+However, perturbing an image is not as straightforward as it may seem. Different replacement strategies can produce different explanations. Moreover, the optimization process may exploit unnatural image artifacts, potentially leading to misleading results. The authors introduce spatial regularization and random jitter to mitigate these effects, although the choice of perturbation remains important.
+
+These challenges highlight a broader consideration: explanations based on removing features depend, in part, on how the missing information is represented. This motivates a complementary perspective. Rather than focusing on the features whose removal disrupts a prediction, we can look for the **minimum subset of features that is sufficient to preserve it**.
+
+In other words, instead of asking what the model can do without, we ask what it needs to make its prediction.
+
+### SIS
+### Anchors
+  
+
+
 
 
 
