@@ -99,8 +99,7 @@ Such challenges motivate conceptual questions about how a deep learning model ma
 **Q4:** A model may achieve high predictive performance by exploiting incidental patterns in the training data rather than learning features relevant to the task. Understanding this distinction is important for assessing whether the evidence supporting a prediction is meaningful.
 
 
-
-Recent work has approached model interpretability through feature and concept based explanations. In this blog, we discuss two such approaches SIS and SENN
+Addressing these questions has motivated the development of different approaches to model interpretability. Broadly, these approaches can be categorized into post-hoc interpretability and intrinsic interpretability. Post-hoc methods aim to explain the predictions of an already-trained model without modifying its architecture, whereas intrinsic methods incorporate interpretability into the model design itself. In this blog, we explore both directions through three representative methods: Sufficient Input Subsets (SIS) and Anchors as post-hoc explanation methods, and Self-Explaining Neural Networks (SENN) as an intrinsically interpretable approach.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
