@@ -40,7 +40,7 @@ bibliography: 2027-04-30-distill-example.bib
 #     for hyperlinks within the post to work correctly.
 #   - please use this format rather than manually creating a markdown table of contents.
 toc:
-  - name: Equations
+  - name: Introduction
   - name: Images and Figures
     subsections:
       - name: Interactive Figures
@@ -76,24 +76,58 @@ _styles: >
 
 ## Introduction
 
-Recent advances in deep learning and large language models have led to the deployment of deep learning models across various domains, including natural language processing <d-cite key="gregor2015draw"></d-cite>, computer vision [], speech processing [], and multimodal learning []. Despite significant performance improvements [] across tasks, deep learning models remain opaque due to complex hierarchical representations. This lack of understanding arises because a single neuron does not represent a single concept, and information is often distributed across multiple layers and neurons. Thus, understanding the contribution of a single neuron is insufficient to understand the model's decision. Recent work has approached model interpretability through feature and concept based explanations. In this blog, we discuss two such approaches SIS and SENN
+Recent advances in deep learning and large language models have led to the deployment of deep learning models across various domains, including natural language processing <d-cite key="gregor2015draw"></d-cite>, computer vision [], speech processing [], and multimodal learning []. Despite significant performance improvements [] across tasks, deep learning models remain opaque due to complex hierarchical representations. This lack of understanding arises because a single neuron does not represent a single concept, and information is often distributed across multiple layers and neurons. Thus, understanding the contribution of a single neuron is insufficient to understand the model's decision. 
+
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/2027-04-30-distill-example/Interpretability.jpg" class="img-fluid" %}
+    </div>
+</div>
+<div class="caption">
+   Conceptual Questions in Neural Network Interpretability 
+</div>
+
+Such challenges motivate conceptual questions about how a deep learning model makes and supports its predictions.
+
+**Q1:** This concerns the patterns and characteristics that a model learns to differentiate between classes and the evidence underlying its predictions.
+
+**Q2:** This examines whether reasonable variations in an input, such as changes in lighting, noise, or background, lead to unexpected changes in the model's predictions.
+
+**Q3:** This focuses on identifying the features or regions of an input that provide evidence for a model's decision.
+
+**Q4:** A model may achieve high predictive performance by exploiting incidental patterns in the training data rather than learning features relevant to the task. Understanding this distinction is important for assessing whether the evidence supporting a prediction is meaningful.
+
+
+
+Recent work has approached model interpretability through feature and concept based explanations. In this blog, we discuss two such approaches SIS and SENN
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/2027-04-30-distill-example/SIS-Anchors Illustration.png" class="img-fluid" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/2027-04-30-distill-example/SENN Illustration.png" class="img-fluid" %}
+    </div>
+</div>
+<div class="caption">
+   Recent Works in Interpretability asks similar questions
+</div>
 
 
 
 
-<!-- The ability to understand and explain how a machine learning or deep learning model makes decisions can be defined as interpretability.  -->
+<!-- The ability to understand and explain how a machine learning or deep learning model makes decisions can be defined as interpretability.  
 
- Many such domains and applications which benefits from better models are often require a model to be transparent. For example: weather prediction model, rejecting loan application, bail denial model or real-time systems in space and finance. It is important that decisions in such applications can be interpretably rationalized. We focus on model interpretability in this blog. The figure above illustrates some of the key questions that interpretability seeks to answer. Consider a weather prediction model used to determine whether environmental conditions are suitable for launching a vehicle. Based on various environmental factors, the model predicts whether the weather is favourable for launch. Suppose that the presence of smog causes the model to classify the weather as overcast, ultimately resulting in a decision to deny the launch.
+ If we want to include this, we can add an illustration corresponding to it even before first paragraph Many such domains and applications which benefits from better models are often require a model to be transparent. For example: weather prediction model, rejecting loan application, bail denial model or real-time systems in space and finance. It is important that decisions in such applications can be interpretably rationalized. We focus on model interpretability in this blog. The figure above illustrates some of the key questions that interpretability seeks to answer. Consider a weather prediction model used to determine whether environmental conditions are suitable for launching a vehicle. Based on various environmental factors, the model predicts whether the weather is favourable for launch. Suppose that the presence of smog causes the model to classify the weather as overcast, ultimately resulting in a decision to deny the launch.
 
- Consider domains such as weather forecasting, loan approval, judicial decision-making (e.g., bail decisions), and real-time systems in aerospace and finance. In these applications, it is important not only to obtain accurate predictions but also to understand the reasoning behind them. A model's decisions should be interpretable and, where necessary, rationalized in terms of the underlying evidence.
+ Consider domains such as weather forecasting, loan approval, judicial decision-making (e.g., bail decisions), and real-time systems in aerospace and finance. In these applications, it is important not only to obtain accurate predictions but also to understand the reasoning behind them. A model's decisions should be interpretable and, where necessary, rationalized in terms of the underlying evidence. 
 
-To illustrate why this matters, consider a weather prediction model used to determine whether environmental conditions are suitable for launching a vehicle. Based on various environmental factors, the model predicts whether the weather is favourable for launch. Suppose that the presence of smog causes the model to classify the weather as overcast, ultimately resulting in a decision to deny the launch.
+To illustrate why this matters, consider a weather prediction model used to determine whether environmental conditions are suitable for launching a vehicle. Based on various environmental factors, the model predicts whether the weather is favourable for launch. Suppose that the presence of smog causes the model to classify the weather as overcast, ultimately resulting in a decision to deny the launch. 
 
-{% include figure.liquid path="assets/img/2027-04-30-distill-example/Interpretability.jpg" class="img-fluid" %}
+However, how can we determine whether this decision is based on the right features? Is the model genuinely relying on relevant environmental factors, or is it being influenced by misleading or irrelevant features? Without an interpretability mechanism, we have no reliable way to examine the reasoning behind the model's predictions or verify whether it is focusing on the appropriate features. In safety-critical applications such as launch vehicle operations, where an incorrect decision can have serious consequences, understanding and validating the model's decision-making process is therefore essential. This is precisely where model interpretability becomes important. -->
 
-However, how can we determine whether this decision is based on the right features? Is the model genuinely relying on relevant environmental factors, or is it being influenced by misleading or irrelevant features? Without an interpretability mechanism, we have no reliable way to examine the reasoning behind the model's predictions or verify whether it is focusing on the appropriate features. In safety-critical applications such as launch vehicle operations, where an incorrect decision can have serious consequences, understanding and validating the model's decision-making process is therefore essential. This is precisely where model interpretability becomes important.
 
-{% include figure.liquid path="assets/img/2027-04-30-distill-example/Rocket Launchpad Through Hazy Skies.jpg" class="img-fluid" %}
 
 Model interpretability can be approached in several ways, depending on how explanations are generated, the scope of the explanation, and the extent to which the underlying model is considered. The figure below presents a taxonomy of model interpretability methods.
 
