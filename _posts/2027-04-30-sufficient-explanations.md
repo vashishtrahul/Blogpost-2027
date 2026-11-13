@@ -99,7 +99,13 @@ Such challenges motivate conceptual questions about how a deep learning model ma
 **Q4:** A model may achieve high predictive performance by exploiting incidental patterns in the training data rather than learning features relevant to the task. Understanding this distinction is important for assessing whether the evidence supporting a prediction is meaningful.
 
 
-Addressing these questions has motivated the development of different approaches to model interpretability. Broadly, these approaches can be categorized into post-hoc interpretability and intrinsic interpretability. Post-hoc methods aim to explain the predictions of an already-trained model without modifying its architecture, whereas intrinsic methods incorporate interpretability into the model design itself. In this blog, we explore both directions through three representative methods: Sufficient Input Subsets (SIS) and Anchors as post-hoc explanation methods, and Self-Explaining Neural Networks (SENN) as an intrinsically interpretable approach.
+Addressing these questions has motivated the development of different approaches to model interpretability. Broadly, these approaches can be categorized into post-hoc interpretability and intrinsic interpretability. Post-hoc methods aim to explain the predictions of an already-trained model without modifying its architecture, whereas intrinsic methods incorporate interpretability into the model design itself. A taxonomy of interpretability approaches, distinguish methods based on how interpretability is achieved, their dependence on the underlying model, and the scope of their explanations. 
+
+
+{% include figure.liquid path="assets/img/2027-04-30-distill-example/Taxonomy_updated.jpg" class="img-fluid" %}
+
+Within this taxonomy, we explore three representative methods: Sufficient Input Subsets (SIS) and Anchors as local, model-agnostic post-hoc methods, and Self-Explaining Neural Networks (SENN) as a local, intrinsically interpretable approach.
+
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -127,12 +133,10 @@ To illustrate why this matters, consider a weather prediction model used to dete
 However, how can we determine whether this decision is based on the right features? Is the model genuinely relying on relevant environmental factors, or is it being influenced by misleading or irrelevant features? Without an interpretability mechanism, we have no reliable way to examine the reasoning behind the model's predictions or verify whether it is focusing on the appropriate features. In safety-critical applications such as launch vehicle operations, where an incorrect decision can have serious consequences, understanding and validating the model's decision-making process is therefore essential. This is precisely where model interpretability becomes important. -->
 
 
+<!-- 
+Model interpretability can be approached in several ways, depending on how explanations are generated, the scope of the explanation, and the extent to which the underlying model is considered. The figure below presents a taxonomy of model interpretability methods. -->
 
-Model interpretability can be approached in several ways, depending on how explanations are generated, the scope of the explanation, and the extent to which the underlying model is considered. The figure below presents a taxonomy of model interpretability methods.
-
-{% include figure.liquid path="assets/img/2027-04-30-distill-example/Taxonomy_updated.jpg" class="img-fluid" %}
-
-In this blog, we focus on two broad directions: post-hoc, model-agnostic explanation methods and self-explainable models. We will examine how these approaches provide local and global explanations, and discuss their strengths and limitations.
+<!-- In this blog, we focus on two broad directions: post-hoc, model-agnostic explanation methods and self-explainable models. We will examine how these approaches provide local and global explanations, and discuss their strengths and limitations. -->
 
 ### From feature importance to minimal sufficient explanations
 
